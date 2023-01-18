@@ -4,42 +4,48 @@ int main() {
 
 	int i, j, k, y, input;
 
-	printf("Bitte geben Sie die Rauten-Breite ein:\n");
+	printf("Bitte geben Sie eine ungerade Zahl als Rauten-Breite ein:\n");
 	scanf("%d", &input);
 
-	for (i = 1; i <= input +  1; i += 2) {
+	if (input % 2 != 0) {
 
-		for (j = 0; j < ((input - i) / 2); j++) {
+		for (i = 1; i <= input +  1; i += 2) {
 
-			printf(" ");
+			for (j = 0; j < ((input - i) / 2); j++) {
+
+				printf(" ");
+			}
+
+			for (y = 0; y < i; y++) {
+
+				printf("*");
+			}
+
+		printf("\n");
+
 		}
 
-		for (y = 0; y < i; y++) {
+		for (i = input - 2; i > 0; i -= 2) {
 
-			printf("*");
+			for (j = 0; j < ((input - i) / 2); j++) {
+
+				printf(" ");
+
+			}
+
+			for (y = 0; y < i; y++) {
+
+				printf("*");
+			}
+
+		printf("\n");
+
 		}
-
-
-	printf("\n");
-
 	}
 
-	for (i = input - 2; i > 0; i -= 2) {
+	else {
 
-		for (j = 0; j < ((input - i) / 2); j++) {
-
-			printf(" ");
-
-		}
-
-		for (y = 0; y < i; y++) {
-
-			printf("*");
-		}
-
-
-	printf("\n");
-
+		printf("Das ist keine ungerade Zahl!\n");
 	}
 
 	return 0;
